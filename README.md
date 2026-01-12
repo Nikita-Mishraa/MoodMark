@@ -16,7 +16,7 @@ It’s about remembering how your days actually felt.
 - Choose one emoji to represent your day  
 - Change or clear moods anytime  
 - Data is saved locally in your browser  
-- No login, no tracking, no cloud — just you  
+- No login, no tracking needed  
 
 ---
 
