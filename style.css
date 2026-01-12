@@ -50,6 +50,11 @@ h1 {
   flex-wrap: wrap;
 }
 
+.picker .clear {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
 #picker button {
   font-size: 22px;
   background: none;
