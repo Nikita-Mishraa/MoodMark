@@ -46,12 +46,22 @@ function renderCalendar() {
 
 function openPicker(dateKey) {
   selectedDate = dateKey
-  picker.innerHTML = emojis.map(e => `<button>${e}</button>`).join("")
+  picker.innerHTML = `${emojis.map(e => `<button>${e}</button>`).join("")}
+  <button class="clear">✕</button>`
   picker.style.display = "flex"
 
   document.querySelectorAll("#picker button").forEach(btn => {
-    btn.onclick = () => saveMood(btn.textContent)
-  })
+    btn.onclick = () => {
+    if (btn.classList.contains("clear")) {
+      delete moods[selectedDate]
+      localStorage.setItem("moods", JSON.stringify(moods))
+      picker.style.display = "none"
+      renderCalendar()
+    } else {
+      saveMood(btn.textContent)
+    }
+  }
+})
 }
 
 function saveMood(emoji) {
